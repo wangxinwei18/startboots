@@ -33,16 +33,16 @@ app.use(bodyParser.urlencoded({extended:true}))
 
 app.set('view engine','ejs')
 app.use(express.static('public'))
-
+// this is for local test
 // app.listen(4000, ()=>{
 //     console.log('App listening on port 4000 ...')
 // })
-
+// this is for web test
 let port = process.env.port;
 if (port == null || port == "") {
     port = 4000;
 }
-
+// this is for web test
 app.listen(port, ()=>{
     console.log('App listening...')
 })
