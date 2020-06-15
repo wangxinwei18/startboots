@@ -27,6 +27,7 @@ app.use(fileUpload())
 app.use(flash());
 
 // mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true});
+mongoose.set('useCreateIndex', true)
 mongoose.connect('mongodb+srv://wxxwxx:abcdef1234@cluster0-21gh5.mongodb.net/my_database',{useNewUrlParser:true,useUnifiedTopology:true});
 
 app.use(bodyParser.json())
@@ -38,6 +39,7 @@ app.use(express.static('public'))
 // app.listen(4000, ()=>{
 //     console.log('App listening on port 4000 ...')
 // })
+
 // this is for web test 
 let port = process.env.port;
 if (port == null || port == "") {
@@ -50,7 +52,9 @@ app.listen(port, ()=>{
 
 app.use('/posts/store',validateMiddleware)
 app.use(expressSession({
-    secret: 'keyboard cat'
+    secret: 'keyboard cat',
+    resave:false,
+   saveUninitialized: true
 }))
 
 global.loggedIn = null;
