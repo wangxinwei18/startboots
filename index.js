@@ -27,7 +27,19 @@ app.use(fileUpload())
 app.use(flash());
 
 // mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true});
-mongoose.connect('mongodb+srv://wxxwxx:abcdef1234@cluster0-21gh5.mongodb.net/my_database')
+mongoose.connect('mongodb+srv://wxxwxx:abcdef1234@cluster0-21gh5.mongodb.net/my_database',{useNewUrlParser:true}, function(err){
+
+    　　if(err){
+    
+    　　　　console.log('Connection Error:' + err)
+    
+    　　}else{
+    
+    　　　　console.log('Connection success!')
+    
+    　　}
+    
+    })
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
