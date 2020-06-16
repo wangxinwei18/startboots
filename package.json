@@ -3,7 +3,7 @@
   "name": "startboots",
   "version": "5.0.8",
     "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "description": "Clean Blog is a Medium inspired blog theme for Bootstrap.",
     "keywords": [
