@@ -42,7 +42,7 @@ app.use(express.static('public'))
 
 // this is for web test 
 let host = '0.0.0.0'
-let port = process.env.port;
+let port = process.env.PORT;
 if (port == null || port == "") {
     port = 5000;
 }
