@@ -41,12 +41,13 @@ app.use(express.static('public'))
 // })
 
 // this is for web test 
+let host = '0.0.0.0'
 let port = process.env.port;
 if (port == null || port == "") {
     port = 5000;
 }
 // this is for web test
-app.listen(port, ()=>{
+app.listen(port, host, ()=>{
     console.log('App listening...')
 })
 
