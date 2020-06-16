@@ -41,24 +41,24 @@ app.use(express.static('public'))
 // })
 
 // this is for web test 
-// let port = process.env.port;
-// if (port == null || port == "") {
-//     port = 5000;
-// }
+let port = process.env.port;
+if (port == null || port == "") {
+    port = 5000;
+}
 // this is for web test
-// app.listen(port, ()=>{
-//     console.log('App listening...')
-// })
+app.listen(port, ()=>{
+    console.log('App listening...')
+})
 
-app.set('port', (process.env.PORT || 5000));
+// app.set('port', (process.env.PORT || 5000));
 
-//For avoidong Heroku $PORT error
-app.get('/', function(request, response) {
-    var result = 'App is running'
-    // response.send(result);
-}).listen(app.get('port'), function() {
-    console.log('App is running, server is listening on port ', app.get('port'));
-});
+// //For avoidong Heroku $PORT error
+// app.get('/', function(request, response) {
+//     var result = 'App is running'
+//     // response.send(result);
+// }).listen(app.get('port'), function() {
+//     console.log('App is running, server is listening on port ', app.get('port'));
+// });
 
 
 app.use('/posts/store',validateMiddleware)
