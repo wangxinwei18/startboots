@@ -28,7 +28,7 @@ app.use(flash());
 
 // mongoose.connect('mongodb://localhost/my_database', {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true)
-mongoose.connect('mongodb+srv://wxxwxx:abcdef1234@cluster0-21gh5.mongodb.net/my_database',{useNewUrlParser:true,useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://wxxwxx:xxxxx@cluster0-21gh5.mongodb.net/my_database',{useNewUrlParser:true,useUnifiedTopology:true});
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
